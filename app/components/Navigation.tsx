@@ -10,10 +10,12 @@ export default function Navigation() {
   const pathname = usePathname();
   // サーバー側とクライアント側で同じ初期状態を使用してハイドレーションエラーを防ぐ
   const [isAboutActive, setIsAboutActive] = useState(false);
+  const [isTopPage, setIsTopPage] = useState(false);
 
   useEffect(() => {
     // クライアント側でのみパス名をチェック
     setIsAboutActive(pathname === "/about");
+    setIsTopPage(pathname === "/");
   }, [pathname]);
 
   return (
@@ -29,7 +31,7 @@ export default function Navigation() {
           sizes="(max-width: 768px) 150px, 222px"
         />
       </Link>
-      <div className={styles.links}>
+      <div className={`${styles.links} ${isTopPage ? styles.topPage : ""}`}>
         <a
           href="https://instagram.com/soboku_design"
           target="_blank"

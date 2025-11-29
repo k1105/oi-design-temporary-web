@@ -29,11 +29,48 @@
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: 900;
-  transition: background-color 0.2s;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--yellow);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.link:hover::before {
+  transform: translateX(0);
 }
 
 .link.active {
   background-color: var(--yellow);
+}
+
+.link.active::before {
+  transform: translateX(0);
+}
+
+/* トップページではテキストカラーを白にトランジション */
+.topPage .link {
+  transition: color 0.3s ease;
+}
+
+.topPage .link:hover {
+  color: white;
+}
+
+.topPage .link.active {
+  color: white;
 }
 
 @media (max-width: 768px) {
