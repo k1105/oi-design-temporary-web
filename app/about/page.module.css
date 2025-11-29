@@ -1,0 +1,143 @@
+.page {
+  background: white;
+  min-height: 100svh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 6vw;
+  font-weight: 700;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.leftSection {
+  display: flex;
+  align-items: stretch;
+  flex-shrink: 0;
+}
+
+.imageWrapper {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.profileImage {
+  width: 100%;
+  height: 100%;
+  max-width: 350px;
+  object-fit: contain;
+}
+
+.faceGif {
+  width: 100%;
+  height: 100%;
+  max-width: 350px;
+  object-fit: contain;
+}
+
+.rightSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  max-width: 500px;
+  padding-left: 40px;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.nameHighlight {
+  background-color: var(--yellow);
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--foreground);
+}
+
+.description {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+  color: var(--foreground);
+}
+
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--gray);
+}
+
+.timeline li {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.contact p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+  color: var(--foreground);
+}
+
+@media (max-width: 968px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .leftSection {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 5rem auto 0;
+    width: 92vw;
+  }
+
+  .imageWrapper {
+    flex: 1;
+  }
+
+  .profileImage,
+  .faceGif {
+    flex: 1;
+    width: 50%; /* 2枚で100%に収まる */
+    max-width: none; /* max-widthの制限を外す */
+    height: auto;
+  }
+
+  .rightSection {
+    max-width: 100%;
+    padding-left: 0;
+  }
+}

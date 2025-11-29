@@ -1,15 +1,20 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type {Metadata} from "next";
+import {Roboto, Zen_Kaku_Gothic_New} from "next/font/google";
+import Navigation from "./components/Navigation";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const roboto = Roboto({
+  weight: ["300", "400", "500", "700"],
   subsets: ["latin"],
+  variable: "--font-roboto",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const zenKakuGothicNew = Zen_Kaku_Gothic_New({
+  weight: ["300", "400", "500", "700", "900"],
   subsets: ["latin"],
+  variable: "--font-zen-kaku-gothic-new",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -23,8 +28,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="ja">
+      <body className={`${roboto.variable} ${zenKakuGothicNew.variable}`}>
+        <Navigation />
         {children}
       </body>
     </html>
