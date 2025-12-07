@@ -1,9 +1,18 @@
+"use client";
+
+import {useState} from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
 import circleStyles from "../components/circle.module.css";
 
 export default function About() {
+  const [isPaused, setIsPaused] = useState(false);
+
+  const handleFaceClick = () => {
+    setIsPaused((prev) => !prev);
+  };
+
   return (
     <div className={styles.page}>
       <Link
@@ -12,22 +21,28 @@ export default function About() {
       />
       <main className={styles.main}>
         <div className={styles.leftSection}>
-          <Image
-            src="/image/oi_about_photo.jpg"
-            alt="大井勇星"
-            width={300}
-            height={300}
-            className={styles.profileImage}
-            priority
-          />
-          <Image
-            src="/gif/face.gif"
-            alt=""
-            width={300}
-            height={300}
-            className={styles.faceGif}
-            priority
-          />
+          <div className={styles.imageWrapper}>
+            <Image
+              src="/image/oi_about_photo.jpg"
+              alt="大井勇星"
+              width={300}
+              height={300}
+              className={styles.profileImage}
+              priority
+            />
+          </div>
+          <div className={styles.imageWrapper}>
+            <Image
+              src="/face.svg"
+              alt=""
+              width={300}
+              height={300}
+              className={`${styles.faceGif} ${isPaused ? styles.paused : ""}`}
+              priority
+              onClick={handleFaceClick}
+              style={{cursor: "pointer"}}
+            />
+          </div>
         </div>
         <div className={styles.rightSection}>
           <div className={styles.nameWrapper}>

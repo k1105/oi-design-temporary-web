@@ -21,6 +21,7 @@
 
 .leftSection {
   display: flex;
+  flex-direction: row;
   align-items: stretch;
   flex-shrink: 0;
 }
@@ -30,6 +31,8 @@
   display: flex;
   align-items: stretch;
   justify-content: center;
+  overflow: hidden;
+  max-width: 350px;
 }
 
 .profileImage {
@@ -44,6 +47,23 @@
   height: 100%;
   max-width: 350px;
   object-fit: contain;
+  animation: rotate 10s linear infinite;
+  transform-origin: center center;
+  position: relative;
+  transition: transform 0.1s;
+}
+
+.faceGif.paused {
+  animation-play-state: paused;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .rightSection {
@@ -129,14 +149,19 @@
 
   .imageWrapper {
     flex: 1;
+    overflow: hidden;
+    max-width: calc(50% - 10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .profileImage,
   .faceGif {
-    flex: 1;
-    width: 50%; /* 2枚で100%に収まる */
-    max-width: none; /* max-widthの制限を外す */
+    width: 100%;
     height: auto;
+    max-width: 100%;
+    object-fit: contain;
   }
 
   .rightSection {
