@@ -30,12 +30,14 @@ export default function About() {
           />
         </div>
         <div className={styles.rightSection}>
-          <h1 className={styles.name}>
-            <span className={styles.nameHighlight}>大井勇星 / Yusei Oi</span>
-          </h1>
-          <p className={styles.title}>
-            <span className={styles.nameHighlight}>Graphic Designer</span>
-          </p>
+          <div className={styles.nameWrapper}>
+            <h1 className={styles.name}>
+              <span className={styles.nameHighlight}>大井勇星 / Yusei Oi</span>
+            </h1>
+            <p className={styles.title}>
+              <span className={styles.nameHighlight}>Graphic Designer</span>
+            </p>
+          </div>
           <p className={styles.description}>
             2001年和歌山県生まれ。京都精華大学グラフィックデザインコース卒業。MAQを経て、CHOCOLATE（外部パートナー）として活動。2025年よりgroovisions所属。ロゴ、ポスター、パッケージなどのデザインを軸に幅広く手掛けている。
           </p>

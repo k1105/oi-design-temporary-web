@@ -60,7 +60,6 @@
 .name {
   font-size: 1.5rem;
   font-weight: 700;
-  margin: 0;
   line-height: 1.2;
 }
 
@@ -111,9 +110,13 @@
   color: var(--foreground);
 }
 
-@media (max-width: 968px) {
+@media (max-width: 768px) {
   .main {
     flex-direction: column;
+  }
+
+  .name {
+    font-size: 1.2rem;
   }
 
   .leftSection {
@@ -138,6 +141,7 @@
 
   .rightSection {
     max-width: 100%;
+    gap: 20px;
     padding-left: 0;
   }
 }
