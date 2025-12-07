@@ -7,6 +7,21 @@
   justify-content: center;
 }
 
+/* 画面の高さが小さい場合、ヘッダーを避けるために上から配置 */
+@media (max-height: 700px) {
+  .page {
+    align-items: flex-start;
+    padding-top: 80px;
+  }
+}
+
+/* モバイルで画面の高さが小さい場合 */
+@media (max-width: 768px) and (max-height: 500px) {
+  .page {
+    padding-top: 100px;
+  }
+}
+
 .main {
   display: flex;
   align-items: center;
